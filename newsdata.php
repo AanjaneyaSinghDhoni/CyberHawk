@@ -193,3 +193,39 @@ function w3_close() {
 
 </body>
 </html>
+<?php
+
+
+
+
+
+ $connection=mysqli_connect("localhost","root","","cyberhawk");
+ 
+ if($connection)
+ {
+	 if(isset($_POST['submit']))
+	{
+		$heading=$_POST['heading'];
+		$body=$_POST['body'];
+		$author=$_POST['author'];
+		$file=$_POST['uploadimage'];
+		$date=$_POST['date'];
+	}
+	
+	echo "connection done";
+	mysqli_query($connection,"INSERT INTO `newsdata`(`id`, `heading`, `body`, `author`, `image_link`, `date`) VALUES ('','$heading','$body','author','uploadimage','date')");
+ }
+ 
+ else
+ {
+		echo "not connected";
+ }
+
+
+
+?>
+
+
+
+
+
