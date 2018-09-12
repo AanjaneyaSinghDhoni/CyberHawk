@@ -68,7 +68,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
   <div class="w3-row w3-padding-64">
     <div class="w3-twothird w3-container">
 	<h1 style="color:#f4428c"><b>Enter the NEWS<b></h1><hr>
-		<form name="formdata" action="newsdata.php" method="post" enctype="multipart/form-data">
+		<form name="formdata" method="post" enctype="multipart/form-data">
 		<table>
 		<tr>
 			<td>
@@ -215,7 +215,7 @@ if(isset($_POST['submit']))
 	echo "<table class=tbl>";
 	while($r=mysqli_fetch_assoc($result))
 	{
-		echo "<tr>"."<td>".$r['id']."</td><td>". $r['heading']."</td><td>". $r['body']."</td><td>". $r['author']."</td><td>". $r['image_link']."</td><td>". $r['date']."</td></tr>";
+		echo "<tr>"."<td>".$r['id']."</td><td>". $r['heading']."</td><td>". $r['body']."</td><td>". $r['author']."</td><td>". $r['image_link']."</td><td>". $r['date']."</td><td><form><input type='submit' name='delete' value='delete'/></form></td></tr>";
 	}
 	 
 	echo "</table>";
