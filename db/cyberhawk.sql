@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 12, 2018 at 08:58 AM
+-- Generation Time: Sep 12, 2018 at 10:46 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 7.0.8
 
@@ -19,6 +19,21 @@ SET time_zone = "+00:00";
 --
 -- Database: `cyberhawk`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `factsdata`
+--
+
+CREATE TABLE `factsdata` (
+  `id` bigint(11) NOT NULL,
+  `heading` varchar(255) NOT NULL,
+  `body` varchar(255) NOT NULL,
+  `author` varchar(255) NOT NULL,
+  `image_link` varchar(255) NOT NULL,
+  `date` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -48,19 +63,32 @@ INSERT INTO `newsdata` (`id`, `heading`, `body`, `author`, `image_link`, `date`)
 (12, 'saa', 'dasdhsad\r\ndasdjasl;d\r\nadsasdmkl;asd\r\nasdajskldjkas\r\ndl;ajsdl;asdas\r\n', 'Aanjaneya', '', '2018-09-12'),
 (13, 'saa', 'dasdhsad\r\ndasdjasl;d\r\nadsasdmkl;asd\r\nasdajskldjkas\r\ndl;ajsdl;asdas\r\n', 'Aanjaneya', '', '2018-09-12'),
 (17, 'Microsoft Issues Software Updates for 17 Critical Vulnerabilities', 'Just a few minutes ago Microsoft released its latest monthly Patch Tuesday update for September 2018, patching a total of 61 security vulnerabilities, 17 of which are rated as critical, 43 are rated Important, and one Moderate in severity.', 'Aanjaneya', '', '2018-09-12'),
-(18, 'Microsoft Issues Software Updates for 17 Critical Vulnerabilities', 'Just a few minutes ago Microsoft released its latest monthly Patch Tuesday update for September 2018, patching a total of 61 security vulnerabilities, 17 of which are rated as critical, 43 are rated Important, and one Moderate in severity.', 'Aanjaneya', 'hello', '2018-09-12'),
-(19, 'Microsoft Issues Software Updates for 17 Critical Vulnerabilities', 'Just a few minutes ago Microsoft released its latest monthly Patch Tuesday update for September 2018, patching a total of 61 security vulnerabilities, 17 of which are rated as critical, 43 are rated Important, and one Moderate in severity.', 'Aanjaneya', 'hello', '2018-09-12'),
-(20, 'Microsoft Issues Software Updates for 17 Critical Vulnerabilities', 'Just a few minutes ago Microsoft released its latest monthly Patch Tuesday update for September 2018, patching a total of 61 security vulnerabilities, 17 of which are rated as critical, 43 are rated Important, and one Moderate in severity.', 'Aanjaneya', 'hello', '2018-09-12'),
-(21, 'Microsoft Issues Software Updates for 17 Critical Vulnerabilities', 'Just a few minutes ago Microsoft released its latest monthly Patch Tuesday update for September 2018, patching a total of 61 security vulnerabilities, 17 of which are rated as critical, 43 are rated Important, and one Moderate in severity.', 'Aanjaneya', 'hello', '2018-09-12'),
-(22, 'Microsoft Issues Software Updates for 17 Critical Vulnerabilities', 'Just a few minutes ago Microsoft released its latest monthly Patch Tuesday update for September 2018, patching a total of 61 security vulnerabilities, 17 of which are rated as critical, 43 are rated Important, and one Moderate in severity.', 'Aanjaneya', 'hello', '2018-09-12'),
 (23, 'Microsoft Issues Software Updates for 17 Critical Vulnerabilities', 'Just a few minutes ago Microsoft released its latest monthly Patch Tuesday update for September 2018, patching a total of 61 security vulnerabilities, 17 of which are rated as critical, 43 are rated Important, and one Moderate in severity.', 'Aanjaneya', 'hello', '2018-09-12'),
-(24, 'Microsoft Issues Software Updates for 17 Critical Vulnerabilities', 'Just a few minutes ago Microsoft released its latest monthly Patch Tuesday update for September 2018, patching a total of 61 security vulnerabilities, 17 of which are rated as critical, 43 are rated Important, and one Moderate in severity.', 'Aanjaneya', 'hello', '2018-09-12'),
-(25, 'Microsoft Issues Software Updates for 17 Critical Vulnerabilities', 'Just a few minutes ago Microsoft released its latest monthly Patch Tuesday update for September 2018, patching a total of 61 security vulnerabilities, 17 of which are rated as critical, 43 are rated Important, and one Moderate in severity.', 'Aanjaneya', 'hello', '2018-09-12'),
-(26, 'Microsoft Issues Software Updates for 17 Critical Vulnerabilities', 'Just a few minutes ago Microsoft released its latest monthly Patch Tuesday update for September 2018, patching a total of 61 security vulnerabilities, 17 of which are rated as critical, 43 are rated Important, and one Moderate in severity.', 'Aanjaneya', 'hello', '2018-09-12'),
-(27, 'Microsoft Issues Software Updates for 17 Critical Vulnerabilities', 'Just a few minutes ago Microsoft released its latest monthly Patch Tuesday update for September 2018, patching a total of 61 security vulnerabilities, 17 of which are rated as critical, 43 are rated Important, and one Moderate in severity.', 'Aanjaneya', 'hello', '2018-09-12'),
-(28, 'Microsoft Issues Software Updates for 17 Critical Vulnerabilities', 'Just a few minutes ago Microsoft released its latest monthly Patch Tuesday update for September 2018, patching a total of 61 security vulnerabilities, 17 of which are rated as critical, 43 are rated Important, and one Moderate in severity.', 'Aanjaneya', 'hello', '2018-09-12'),
-(29, 'Microsoft Issues Software Updates for 17 Critical Vulnerabilities', 'Just a few minutes ago Microsoft released its latest monthly Patch Tuesday update for September 2018, patching a total of 61 security vulnerabilities, 17 of which are rated as critical, 43 are rated Important, and one Moderate in severity.', 'Aanjaneya', 'hello', '2018-09-12'),
-(30, 'Microsoft Issues Software Updates for 17 Critical Vulnerabilities', 'Just a few minutes ago Microsoft released its latest monthly Patch Tuesday update for September 2018, patching a total of 61 security vulnerabilities, 17 of which are rated as critical, 43 are rated Important, and one Moderate in severity.', 'Aanjaneya', 'hello', '2018-09-12');
+(35, 'Microsoft Issues Software Updates for 17 Critical Vulnerabilities', 'Just a few minutes ago Microsoft released its latest monthly Patch Tuesday update for September 2018, patching a total of 61 security vulnerabilities, 17 of which are rated as critical, 43 are rated Important, and one Moderate in severity.', 'Aanjaneya', 'hello', '2018-09-12'),
+(36, 'Microsoft Issues Software Updates for 17 Critical Vulnerabilities', 'Just a few minutes ago Microsoft released its latest monthly Patch Tuesday update for September 2018, patching a total of 61 security vulnerabilities, 17 of which are rated as critical, 43 are rated Important, and one Moderate in severity.', 'Aanjaneya', 'hello', '2018-09-12'),
+(37, 'Microsoft Issues Software Updates for 17 Critical Vulnerabilities', 'Just a few minutes ago Microsoft released its latest monthly Patch Tuesday update for September 2018, patching a total of 61 security vulnerabilities, 17 of which are rated as critical, 43 are rated Important, and one Moderate in severity.', 'Aanjaneya', 'hello', '2018-09-12'),
+(38, 'Microsoft Issues Software Updates for 17 Critical Vulnerabilities', 'Just a few minutes ago Microsoft released its latest monthly Patch Tuesday update for September 2018, patching a total of 61 security vulnerabilities, 17 of which are rated as critical, 43 are rated Important, and one Moderate in severity.', 'Aanjaneya', 'hello', '2018-09-12'),
+(39, 'hello world', 'how are you', 'aman', 'hello', '2018-09-12'),
+(51, 'hello world', 'how are you', 'Aanjaneya', 'hello', '2018-09-12'),
+(52, 'hello world', 'how are you', 'Aanjaneya', 'hello', '2018-09-12'),
+(53, 'hello world', 'how are you', 'Aanjaneya', 'hello', '2018-09-12'),
+(54, 'gdfgdfg', 'dgdfgdfg', '', 'hello', ''),
+(55, 'gdfgdfg', 'dgdfgdfg', '', 'hello', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `toolsdata`
+--
+
+CREATE TABLE `toolsdata` (
+  `id` int(10) NOT NULL,
+  `heading` varchar(255) NOT NULL,
+  `body` varchar(255) NOT NULL,
+  `author` varchar(255) NOT NULL,
+  `image_link` varchar(255) NOT NULL,
+  `date` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -91,9 +119,21 @@ INSERT INTO `uploaddata` (`id`, `name`, `password`, `file_name`) VALUES
 --
 
 --
+-- Indexes for table `factsdata`
+--
+ALTER TABLE `factsdata`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `newsdata`
 --
 ALTER TABLE `newsdata`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `toolsdata`
+--
+ALTER TABLE `toolsdata`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -107,10 +147,20 @@ ALTER TABLE `uploaddata`
 --
 
 --
+-- AUTO_INCREMENT for table `factsdata`
+--
+ALTER TABLE `factsdata`
+  MODIFY `id` bigint(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `newsdata`
 --
 ALTER TABLE `newsdata`
-  MODIFY `id` bigint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` bigint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+--
+-- AUTO_INCREMENT for table `toolsdata`
+--
+ALTER TABLE `toolsdata`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `uploaddata`
 --
