@@ -16,6 +16,12 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
   bottom: 0;
   height: inherit;
 }
+
+.tbl,.tbl td, .tbl tr{
+    border: 1px solid black;
+	border-spacing: 0px;
+}
+
 </style>
 <body>
 
@@ -62,7 +68,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
   <div class="w3-row w3-padding-64">
     <div class="w3-twothird w3-container">
 	<h1 style="color:#f4bb41"><b>Enter the TOOLS<b></h1><hr>
-		<form name="formdata" action="newsdata.php" method="post">
+		<form name="formdata" action="toolsdata.php" method="post">
 		<table>
 		<tr>
 			<td>
@@ -193,3 +199,50 @@ function w3_close() {
 
 </body>
 </html>
+
+
+
+
+<?php
+
+
+$query='select * FROM `toolsdata`';
+$connection=mysqli_connect("localhost","root","","cyberhawk");
+	$result=mysqli_query($connection, $query);
+	echo "<table class=tbl>";
+	while($r=mysqli_fetch_assoc($result))
+	{
+		echo "<tr>"."<td>".$r['id']."</td><td>". $r['heading']."</td><td>". $r['body']."</td><td>". $r['author']."</td><td>". $r['image_link']."</td><td>". $r['date']."</td><td><form><input type='submit' name='delete' value='delete'/></form></td></tr>";
+	}
+	 
+	echo "</table>";
+	
+if(isset($_POST['submit']))
+{
+	
+	
+			$heading = $_POST['heading'];
+			$body = $_POST['body'];
+			$author = $_POST['author'];
+			$file = "hello";
+			$date = $_POST['date'];
+	
+			$query=mysqli_query($connection,"INSERT INTO `toolsdata`(`id`, `heading`, `body`, `author`, `image_link`, `date`) VALUES ('','$heading','$body','$author','$file','$date')");
+			if($query)
+			{
+				echo "Data Updated";
+			}
+			else
+			{
+				echo "Error in updating";
+			}
+		
+}	
+
+mysqli_close($connection);
+
+
+
+
+
+?>
