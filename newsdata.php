@@ -69,7 +69,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 			HEADING:
 			</td>
 			<td></br>
-			<textarea name="body" rows="1" cols="130"></textarea></br></br>
+			<textarea name="heading" rows="1" cols="130"></textarea></br></br>
 			</td>	
 		</tr>
 		<tr>
@@ -194,27 +194,27 @@ function w3_close() {
 </body>
 </html>
 <?php
-
-
-
-
-
  $connection=mysqli_connect("localhost","root","","cyberhawk");
  
  if($connection)
  {
 	 if(isset($_POST['submit']))
 	{
+		echo "connection done";
 		$heading=$_POST['heading'];
 		$body=$_POST['body'];
 		$author=$_POST['author'];
 		$file=$_POST['uploadimage'];
 		$date=$_POST['date'];
-	}
+		
+		echo "$heading  $body  $author  $file  $date";
 	
-	echo "connection done";
-	mysqli_query($connection,"INSERT INTO `newsdata`(`id`, `heading`, `body`, `author`, `image_link`, `date`) VALUES ('','$heading','$body','author','uploadimage','date')");
- }
+		mysqli_query($connection,"INSERT INTO `newsdata`(`id`, `heading`, `body`, `author`, `image_link`, `date`) VALUES ('','$heading','$body','$author','$file','$date')");
+ 
+	}
+	else{
+	}
+}
  
  else
  {
