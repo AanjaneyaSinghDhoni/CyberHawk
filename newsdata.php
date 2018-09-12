@@ -68,7 +68,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
   <div class="w3-row w3-padding-64">
     <div class="w3-twothird w3-container">
 	<h1 style="color:#f4428c"><b>Enter the NEWS<b></h1><hr>
-		<form name="formdata" method="post" enctype="multipart/form-data">
+		<form name="formdata" action="newsdata.php" method="post" enctype="multipart/form-data">
 		<table>
 		<tr>
 			<td>
@@ -202,14 +202,8 @@ function w3_close() {
 </body>
 </html>
 <?php
-
+$query='select * FROM `newsdata`';
 $connection=mysqli_connect("localhost","root","","cyberhawk");
-
-
-
-if(isset($_POST['submit']))
-{
-	$query='select * FROM `newsdata`';
 	$result=mysqli_query($connection, $query);
 	echo "<table class=tbl>";
 	while($r=mysqli_fetch_assoc($result))
@@ -218,6 +212,10 @@ if(isset($_POST['submit']))
 	}
 	 
 	echo "</table>";
+	
+if(isset($_POST['submit']))
+{
+	
 	
 			$heading = $_POST['heading'];
 			$body = $_POST['body'];
