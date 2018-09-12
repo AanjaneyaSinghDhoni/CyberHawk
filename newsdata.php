@@ -7,6 +7,8 @@
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 <style>
 html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 .w3-sidebar {
@@ -15,6 +17,10 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
   top: 43px;
   bottom: 0;
   height: inherit;
+}
+.tbl,.tbl td, .tbl tr{
+    border: 1px solid black;
+	border-spacing: 0px;
 }
 </style>
 <body>
@@ -157,6 +163,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
     <div class="w3-container w3-theme-l2 w3-padding-32">
 
     </div>
+	
+	<h1 style="color:#f4428c"><b>NEWS DATA</b></h1>
 
     <div class="w3-container w3-theme-l1">
   
@@ -196,6 +204,18 @@ function w3_close() {
 <?php
 
 $connection=mysqli_connect("localhost","root","","cyberhawk");
+
+$query='select * FROM `newsdata`';
+$result=mysqli_query($connection, $query);
+
+echo "<table class=tbl>";
+	while($r=mysqli_fetch_assoc($result))
+	{
+		echo "<tr>"."<td>".$r['id']."</td><td>". $r['heading']."</td><td>". $r['body']."</td><td>". $r['author']."</td><td>". $r['image_link']."</td><td>". $r['date']."</td></tr>";
+	 }
+	 
+echo "</table>";
+ 
 if(isset($_POST['submit']))
 {
 		if($connection)
@@ -203,7 +223,7 @@ if(isset($_POST['submit']))
 			$heading = $_POST['heading'];
 			$body = $_POST['body'];
 			$author = $_POST['author'];
-			$file = $_POST['uploadimage'];
+			$file = "hello";
 			$date = $_POST['date'];
 	
 			mysqli_query($connection,"INSERT INTO `newsdata`(`id`, `heading`, `body`, `author`, `image_link`, `date`) VALUES ('','$heading','$body','$author','$file','$date')");
@@ -212,18 +232,11 @@ if(isset($_POST['submit']))
 		{
 			echo "no connection";
 		}
+		
 }	
 
+mysql_close($connection);
 
-$query='select * FROM `newsdata`';
-$result=mysqli_query($var, $query);
-
-
-	while($r=mysqli_fetch_assoc($result))
-	{
-		echo $r['id']."<br>". $r['heading']."<br>". $r['body']."<br>". $r['author']."<br>". $r['image_link']."<br>". $r['date'];
-	}
- 
 
 
 
