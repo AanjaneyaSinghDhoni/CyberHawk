@@ -208,17 +208,20 @@ $connection=mysqli_connect("localhost","root","","cyberhawk");
 $query='select * FROM `newsdata`';
 $result=mysqli_query($connection, $query);
 
-echo "<table class=tbl>";
-	while($r=mysqli_fetch_assoc($result))
-	{
-		echo "<tr>"."<td>".$r['id']."</td><td>". $r['heading']."</td><td>". $r['body']."</td><td>". $r['author']."</td><td>". $r['image_link']."</td><td>". $r['date']."</td></tr>";
-	 }
-	 
-echo "</table>";
+
  
 if(isset($_POST['submit']))
 {
-		if($connection)
+	echo "<table class=tbl>";
+	while($r=mysqli_fetch_assoc($result))
+	{
+		echo "<tr>"."<td>".$r['id']."</td><td>". $r['heading']."</td><td>". $r['body']."</td><td>". $r['author']."</td><td>". $r['image_link']."</td><td>". $r['date']."</td></tr>";
+	}
+	 
+	echo "</table>";
+	
+
+	if($connection)
 		{
 			$heading = $_POST['heading'];
 			$body = $_POST['body'];
