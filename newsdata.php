@@ -62,7 +62,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
   <div class="w3-row w3-padding-64">
     <div class="w3-twothird w3-container">
 	<h1 style="color:#f4428c"><b>Enter the NEWS<b></h1><hr>
-		<form name="formdata" action="newsdata.php" method="post">
+		<form name="formdata" action="newsdata.php" method="post" enctype="multipart/form-data">
 		<table>
 		<tr>
 			<td>
@@ -194,32 +194,37 @@ function w3_close() {
 </body>
 </html>
 <?php
- $connection=mysqli_connect("localhost","root","","cyberhawk");
- 
- if($connection)
- {
-	 if(isset($_POST['submit']))
-	{
-		echo "connection done";
-		$heading=$_POST['heading'];
-		$body=$_POST['body'];
-		$author=$_POST['author'];
-		$file=$_POST['uploadimage'];
-		$date=$_POST['date'];
-		
-		echo "$heading  $body  $author  $file  $date";
+
+$connection=mysqli_connect("localhost","root","","cyberhawk");
+if(isset($_POST['submit']))
+{
+		if($connection)
+		{
+			$heading = $_POST['heading'];
+			$body = $_POST['body'];
+			$author = $_POST['author'];
+			$file = $_POST['uploadimage'];
+			$date = $_POST['date'];
 	
-		mysqli_query($connection,"INSERT INTO `newsdata`(`id`, `heading`, `body`, `author`, `image_link`, `date`) VALUES ('','$heading','$body','$author','$file','$date')");
- 
+			mysqli_query($connection,"INSERT INTO `newsdata`(`id`, `heading`, `body`, `author`, `image_link`, `date`) VALUES ('','$heading','$body','$author','$file','$date')");
+		}
+		else
+		{
+			echo "no connection";
+		}
+}	
+
+
+$query='select * FROM `newsdata`';
+$result=mysqli_query($var, $query);
+
+
+	while($r=mysqli_fetch_assoc($result))
+	{
+		echo $r['id']."<br>". $r['heading']."<br>". $r['body']."<br>". $r['author']."<br>". $r['image_link']."<br>". $r['date'];
 	}
-	else{
-	}
-}
  
- else
- {
-		echo "not connected";
- }
+
 
 
 
