@@ -205,13 +205,12 @@ function w3_close() {
 
 $connection=mysqli_connect("localhost","root","","cyberhawk");
 
-$query='select * FROM `newsdata`';
-$result=mysqli_query($connection, $query);
 
 
- 
 if(isset($_POST['submit']))
 {
+	$query='select * FROM `newsdata`';
+	$result=mysqli_query($connection, $query);
 	echo "<table class=tbl>";
 	while($r=mysqli_fetch_assoc($result))
 	{
@@ -220,21 +219,21 @@ if(isset($_POST['submit']))
 	 
 	echo "</table>";
 	
-
-	if($connection)
-		{
 			$heading = $_POST['heading'];
 			$body = $_POST['body'];
 			$author = $_POST['author'];
 			$file = "hello";
 			$date = $_POST['date'];
 	
-			mysqli_query($connection,"INSERT INTO `newsdata`(`id`, `heading`, `body`, `author`, `image_link`, `date`) VALUES ('','$heading','$body','$author','$file','$date')");
-		}
-		else
-		{
-			echo "no connection";
-		}
+			$query=mysqli_query($connection,"INSERT INTO `newsdata`(`id`, `heading`, `body`, `author`, `image_link`, `date`) VALUES ('','$heading','$body','$author','$file','$date')");
+			if($query)
+			{
+				echo "Data Updated";
+			}
+			else
+			{
+				echo "Error in updating";
+			}
 		
 }	
 
