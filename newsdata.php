@@ -238,7 +238,7 @@ if(isset($_POST['submit']))
 		
 }	
 
-mysql_close($connection);
+mysqli_close($connection);
 
 
 
